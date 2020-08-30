@@ -313,7 +313,7 @@ void Menu(){
             case 'U':
                 create_user(users);
                 break;
-            case 'I':
+            case 'L':
                 delete_user(users);
                 break;
             case 'V':
