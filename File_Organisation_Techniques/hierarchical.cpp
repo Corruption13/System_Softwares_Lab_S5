@@ -10,7 +10,6 @@ CS4A
 
 
 */
-
 #include <iostream>
 #include <vector>
 
@@ -80,14 +79,11 @@ class directory{
         string get_name(){
             return name;
         }
-        
-        
-
 };
 
 void directory::create_file(){
+    
     file new_file;
-
     cout<<endl<<"Enter file name: ";
     cin>> new_file.name;    
     cout<<"Enter file size(Kb): ";
@@ -156,6 +152,7 @@ void directory::create_file_new(){
 }
 
 void directory::erase_file(){
+ 
     if(file_count <=0){
         cout<<"The directory is already empty!" ;
     }
@@ -194,13 +191,11 @@ void depth_inset(int d){
 
 void directory::display_files(){
   
-    
     for(int i=0; i<directory_files.size(); i++){
         depth_inset(depth+1);
         cout<<"f| "<< directory_files[i].name;
         cout<<"("<<directory_files[i].size<<" Kb)";
     }
-
 }
 
 void directory::display_directory_single(){
@@ -216,8 +211,7 @@ void directory::display_directory_single(){
 
 
 void directory::display_directory(){
-       
-    
+     
     for(int i=0; i<child_directory.size(); i++){
         depth_inset(depth+1);
         cout<<"d| "<< child_directory[i].get_name();
@@ -225,9 +219,6 @@ void directory::display_directory(){
         child_directory[i].display_directory();
 
     }
-
-
-
 }
 
 void directory::create_directory(){
@@ -274,8 +265,6 @@ void directory::create_directory(){
     {
         cout<<"\nIncorrect choice!"; 
     }
-    
-
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -317,9 +306,6 @@ void create_user(std::vector<user_partition> &users){
     USERCOUNT++;
     user_partition new_user(name, USERCOUNT, password);
     users.push_back(new_user);
-
-    
-
 }
 
 void delete_user(std::vector<user_partition> &users){
@@ -336,9 +322,6 @@ void delete_user(std::vector<user_partition> &users){
             USERCOUNT--;
         }
     }
-
-    
-
 }
 
 void user_list_view(std::vector<user_partition> &users){
@@ -417,7 +400,6 @@ void erase_file_wrapper(std::vector<user_partition> &users){\
             cout<<"\nUser not found!\n";
         }
     }
-
 }
 
 void new_directory_wrapper(std::vector<user_partition> &users){
@@ -468,11 +450,11 @@ void inline options(){
 
 void Menu(){
 
-    char choice='A';
     directory root("~root");
     std::vector<user_partition> users; 
 
-
+    char choice='A';
+ 
     cout<<"\nWelcome! This program will help visualise a single directory file system";
     cout<<endl<<endl<<"Please select an option to proceed:"<<endl;
     options();
@@ -522,7 +504,6 @@ void Menu(){
 
 int main(){
 
-    directory root("root"); 
     Menu();
 
 }
