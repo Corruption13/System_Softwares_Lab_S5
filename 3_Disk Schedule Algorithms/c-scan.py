@@ -11,7 +11,7 @@ def c_scan(init_head, reqArr):
     """
         Circular SCAN Algorithm: 
          Go left from initial address to end address and then reset back to start 
-         index and then traverse all remaining addresses in same order.
+         index and then traverse all remaining addresses in direction.
          Or vice versa.
          Direction is decided by nearest first initial node with respect to head.
 
